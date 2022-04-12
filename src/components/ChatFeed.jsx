@@ -64,7 +64,13 @@ const ChatFeed = (props) => {
       <div className='chat-title-container'>
         <div className='chat-title'>{chat?.title}</div>
         <div className='chat-subtitle'>
-          {chat.people.map((person) => ` ${person.person.username}`)}
+          {chat.people.map(
+            (person) =>
+              ` ${
+                person.person.username[0].toUpperCase() +
+                person.person.username.slice(1)
+              }. `
+          )}
         </div>
       </div>
       {renderMessages()}

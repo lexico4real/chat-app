@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,7 +21,9 @@ const LoginForm = () => {
       localStorage.setItem('username', username);
       localStorage.setItem('password', password);
       window.location.reload();
-    } catch (error) {}
+    } catch (error) {
+      setError('Invalid username or password');
+    }
   };
   return (
     <div className='wrapper'>
@@ -44,9 +47,12 @@ const LoginForm = () => {
               className='input'
               required
             />
-            <button type='submit' className='button'>
-              <span>Start Chatting</span>
-            </button>
+            <div align='center'>
+              <button type='submit' className='button'>
+                <span>Start Chatting</span>
+              </button>
+            </div>
+            <h2 className='error'>{error}</h2>
           </form>
         </div>
       </div>
