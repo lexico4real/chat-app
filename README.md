@@ -19,12 +19,15 @@ You may also see any lint errors in the console.
 Go to https://oluyinka-chat-app.netlify.app/
 
 >usename: bright
+
 >password: secret
 
 >username: neme
+
 >password: secret
 
 >username: lexico4real
+
 ?password: secret
 
 
